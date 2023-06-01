@@ -55,13 +55,13 @@ int main(void) {
     // check for errors
     {
         int success;
-        char infoLog[512];
         glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
 
         if (!success) {
-            glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-            printf("ERROR: SHADER VERTEX COMPILATION FAILED\n");
-            printf("%s\n", infoLog);
+          char infoLog[512];
+          glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+          printf("ERROR: SHADER VERTEX COMPILATION FAILED\n");
+          printf("%s\n", infoLog);
         }
     }
 
@@ -73,13 +73,13 @@ int main(void) {
     // check for errors again
     {
         int success;
-        char infoLog[512];
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 
         if (!success) {
-            glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-            printf("ERROR: SHADER FRAGMENT COMPILATION FAILED\n");
-            printf("%s\n", infoLog);
+          char infoLog[512];
+          glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+          printf("ERROR: SHADER FRAGMENT COMPILATION FAILED\n");
+          printf("%s\n", infoLog);
         }
     }
 
